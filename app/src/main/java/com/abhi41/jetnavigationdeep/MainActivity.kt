@@ -14,7 +14,9 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.abhi41.jetnavigationdeep.navigation.SetupNavgraph
 import com.abhi41.jetnavigationdeep.ui.theme.JetNavigationDeepTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
     lateinit var navController: NavHostController

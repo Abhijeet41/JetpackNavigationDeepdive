@@ -15,6 +15,7 @@ fun NavGraphBuilder.detailRoute(
     onBackNavigation: () -> Unit,
     onNavigateToOverview: (Int, String) -> Unit
 ) {
+
     composable(
         route = Screen.Detail.route,
         arguments = listOf(navArgument(DETAIL_ARGUMENT_ID) {

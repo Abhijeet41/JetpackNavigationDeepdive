@@ -2,6 +2,7 @@ package com.abhi41.jetnavigationdeep.screen.overview
 
 import android.util.Log
 import androidx.compose.runtime.LaunchedEffect
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
@@ -13,8 +14,9 @@ import com.abhi41.jetnavigationdeep.util.Constants.OVERVIEW_ARGUMENT_NAME
 private const val TAG = "OverviewNavigation"
 fun NavGraphBuilder.overviewRoute(
     onBackNavigation: ()-> Unit,
-    onNavigateToMetaInfo: () -> Unit
+    onNavigateToMetaInfo: () -> Unit,
 ){
+
     composable(
         route = Screen.OverviewScreen.route,
         arguments = listOf(
@@ -28,6 +30,7 @@ fun NavGraphBuilder.overviewRoute(
             }
         )
     ){
+        val viewmodel: OverViewModel = hiltViewModel()
 
         LaunchedEffect(key1 = Unit){
             Log.d(TAG, "ID_ARGS ${it.arguments?.getInt(OVERVIEW_ARGUMENT_ID)}")
